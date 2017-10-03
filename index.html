@@ -187,7 +187,6 @@
       padding-bottom: 20px;
     }
     #slidecontainer {
-        padding: 80px 0 10px;
         width: 500px; /* Width of the outside container */
     }
     /* The slider itself */
@@ -224,15 +223,37 @@
         background: #4CAF50; /* Green background */
         cursor: pointer; /* Cursor on hover */
     }
+    #markerSizeManager {
+      position: fixed;
+      left: 525px;
+    }
+    #referenceMarker {
+      position: relative;
+      left: 232px;
+      top: 15px;
+    }
   </style>
 </head>
 <body>
 
-<h1>People Counter</h1>
+<h1>Count the number of people with at least half their head visible</h1>
+<div id="instructions">
+  <p> Please count the number of (human) people with at least 50% of their head (note that back of the head counts!) visible in each image by clicking on each head - a circle will be created where you click, and the "You have selected [SOME NUMBER] people" text below each picture will be updated. </p>
 
-<div id="referenceMarker" class='marker'></div>
-<div id="slidecontainer">
-  <input type="range" min="5" max="75" value="40" class="slider" id="myRange">
+  <p> You can delete circles by clicking on them. </p>
+
+  <p> You can change the size of circles by using the "Change the size of circles" slider on the right side of the screen. </p>
+
+  <p>
+    The correct label for one image is known. <b> Bonuses of $1.50 will be given if that image is labelled correctly. Bonuses of $0.50 will be given if that image is labelled with error no more than 3. </b>
+  </p>
+</div>
+<div id="markerSizeManager">
+  <h2> Change the size of circles </h2>
+  <div id="slidecontainer">
+    <input type="range" min="5" max="75" value="40" class="slider" id="myRange">
+  </div>
+  <div id="referenceMarker" class='marker'></div>
 </div>
 
 <img id="theimage1" width="500px" src="https://lh3.googleusercontent.com/YQ4vhAkyih5ulg1YwqOB_35GBj5pF3isFxWoQh4bPrqnhAFl7iU9F8KKD7UUwxi2fdzdHhcqQVI0Xlr3ZuHSvYbUv94PnEvpnVCr5ZjArHpSzbNlBcuohjHKGDgsbo5hkFt2j-E">
@@ -272,13 +293,16 @@
 
 <form id="mturk_form">
 <p>
-  <input id="numberofpeoplefield1" type="hidden" name="numberofpeople">
-  <input id="numberofpeoplefield2" type="hidden" name="numberofpeople">
-  <input id="numberofpeoplefield3" type="hidden" name="numberofpeople">
-  <input id="numberofpeoplefield4" type="hidden" name="numberofpeople">
-  <input id="numberofpeoplefield5" type="hidden" name="numberofpeople">
-  <input id="numberofpeoplefield6" type="hidden" name="numberofpeople">
-  <input id="numberofpeoplefield7" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield1" type="hidden" name="numberofpeople1">
+  <input id="numberofpeoplefield2" type="hidden" name="numberofpeople2">
+  <input id="numberofpeoplefield3" type="hidden" name="numberofpeople3">
+  <input id="numberofpeoplefield4" type="hidden" name="numberofpeople4">
+  <input id="numberofpeoplefield5" type="hidden" name="numberofpeople5">
+  <input id="numberofpeoplefield6" type="hidden" name="numberofpeople6">
+  <input id="numberofpeoplefield7" type="hidden" name="numberofpeople7">
+  <h3> (Optional) How can we improve the design of this HIT? </h3>
+  <input id="recommendations" type="textarea" size="100" name="recommendations">
+  <br>
   <input type="submit" name="Submit">
 </p>
 
@@ -287,8 +311,6 @@
   var ref = document.getElementById('referenceMarker');
   $(ref).css("width", slider.value + "px");
   $(ref).css("height", slider.value + "px");
-  $(ref).css("left", 240 + "px");
-  $(ref).css("top", 70 + "px");
   
 
   // Update the current slider value (each time you drag the slider handle)
@@ -296,8 +318,6 @@
     markerSize = slider.value;
     $(ref).css("width", slider.value + "px");
     $(ref).css("height", slider.value + "px");
-    $(ref).css("left", 240 + "px");
-    $(ref).css("top", 70 + "px");
   }
 </script>
 </body>
