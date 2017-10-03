@@ -13,6 +13,8 @@
     var numclicks6 = 0;
     var numclicks7 = 0;
 
+    var markerSize = 40;
+
   	$(document).ready(function() {
   		$("#theimage1").click(function(e) {
         numclicks1++;
@@ -20,8 +22,10 @@
         $("#numberofpeoplefield1").val(numclicks1);
 
         var newdomelement = $("<div class='marker'></div>");
-        newdomelement.css("left", (e.pageX-3) + "px");
-        newdomelement.css("top", (e.pageY-3) + "px");
+        newdomelement.css("width", markerSize + "px");
+        newdomelement.css("height", markerSize + "px");
+        newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+        newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
         newdomelement.click(removeElementEvent1);
 
@@ -33,8 +37,10 @@
         $("#numberofpeoplefield2").val(numclicks2);
 
         var newdomelement = $("<div class='marker'></div>");
-        newdomelement.css("left", (e.pageX-3) + "px");
-        newdomelement.css("top", (e.pageY-3) + "px");
+        newdomelement.css("width", markerSize + "px");
+        newdomelement.css("height", markerSize + "px");
+        newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+        newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
         newdomelement.click(removeElementEvent2);
 
@@ -46,8 +52,10 @@
           $("#numberofpeoplefield3").val(numclicks3);
 
           var newdomelement = $("<div class='marker'></div>");
-          newdomelement.css("left", (e.pageX-3) + "px");
-          newdomelement.css("top", (e.pageY-3) + "px");
+          newdomelement.css("width", markerSize + "px");
+          newdomelement.css("height", markerSize + "px");
+          newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+          newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
           newdomelement.click(removeElementEvent3);
 
@@ -59,8 +67,10 @@
           $("#numberofpeoplefield4").val(numclicks4);
 
           var newdomelement = $("<div class='marker'></div>");
-          newdomelement.css("left", (e.pageX-3) + "px");
-          newdomelement.css("top", (e.pageY-3) + "px");
+          newdomelement.css("width", markerSize + "px");
+          newdomelement.css("height", markerSize + "px");
+          newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+          newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
           newdomelement.click(removeElementEvent4);
 
@@ -72,8 +82,10 @@
         $("#numberofpeoplefield5").val(numclicks5);
 
         var newdomelement = $("<div class='marker'></div>");
-        newdomelement.css("left", (e.pageX-3) + "px");
-        newdomelement.css("top", (e.pageY-3) + "px");
+        newdomelement.css("width", markerSize + "px");
+        newdomelement.css("height", markerSize + "px");
+        newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+        newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
         newdomelement.click(removeElementEvent5);
 
@@ -85,8 +97,10 @@
         $("#numberofpeoplefield6").val(numclicks6);
 
         var newdomelement = $("<div class='marker'></div>");
-        newdomelement.css("left", (e.pageX-3) + "px");
-        newdomelement.css("top", (e.pageY-3) + "px");
+        newdomelement.css("width", markerSize + "px");
+        newdomelement.css("height", markerSize + "px");
+        newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+        newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
         newdomelement.click(removeElementEvent6);
 
@@ -98,8 +112,10 @@
         $("#numberofpeoplefield7").val(numclicks7);
 
         var newdomelement = $("<div class='marker'></div>");
-        newdomelement.css("left", (e.pageX-3) + "px");
-        newdomelement.css("top", (e.pageY-3) + "px");
+        newdomelement.css("width", markerSize + "px");
+        newdomelement.css("height", markerSize + "px");
+        newdomelement.css("left", (e.pageX-(markerSize/2)) + "px");
+        newdomelement.css("top", (e.pageY-(markerSize/2)) + "px");
 
         newdomelement.click(removeElementEvent7);
 
@@ -156,12 +172,11 @@
       $("#numberofpeople7").text(numclicks1);
       $("#numberofpeoplefield7").val(numclicks1); 
     }
-
   </script>
   <style>
     .marker {
-      border: 2px solid red;
-      border-radius: 5px;
+      background-color: red;
+      border-radius: 50px;
       width: 2px;
       height: 2px;
       position: absolute;
@@ -171,11 +186,54 @@
     p {
       padding-bottom: 20px;
     }
+    #slidecontainer {
+        padding: 80px 0 10px;
+        width: 500px; /* Width of the outside container */
+    }
+    /* The slider itself */
+    .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 15px; /* Specified height */
+        border-radius: 5px;   
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+    /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        border-radius: 50%; 
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        border-radius: 50%;
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
   </style>
 </head>
 <body>
 
 <h1>People Counter</h1>
+
+<div id="referenceMarker" class='marker'></div>
+<div id="slidecontainer">
+  <input type="range" min="5" max="75" value="40" class="slider" id="myRange">
+</div>
 
 <img id="theimage1" width="500px" src="https://lh3.googleusercontent.com/YQ4vhAkyih5ulg1YwqOB_35GBj5pF3isFxWoQh4bPrqnhAFl7iU9F8KKD7UUwxi2fdzdHhcqQVI0Xlr3ZuHSvYbUv94PnEvpnVCr5ZjArHpSzbNlBcuohjHKGDgsbo5hkFt2j-E">
 <p>
@@ -223,5 +281,24 @@
   <input id="numberofpeoplefield7" type="hidden" name="numberofpeople">
   <input type="submit" name="Submit">
 </p>
+
+<script>
+  var slider = document.getElementById("myRange");
+  var ref = document.getElementById('referenceMarker');
+  $(ref).css("width", slider.value + "px");
+  $(ref).css("height", slider.value + "px");
+  $(ref).css("left", 240 + "px");
+  $(ref).css("top", 70 + "px");
+  
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+    markerSize = slider.value;
+    $(ref).css("width", slider.value + "px");
+    $(ref).css("height", slider.value + "px");
+    $(ref).css("left", 240 + "px");
+    $(ref).css("top", 70 + "px");
+  }
+</script>
 </body>
 </html>
