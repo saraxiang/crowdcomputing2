@@ -6,6 +6,12 @@
   <script src="mturk.js"></script>
   <script>
   	var numclicks1 = 0;
+    var numclicks2 = 0;
+    var numclicks3 = 0;
+    var numclicks4 = 0;
+    var numclicks5 = 0;
+    var numclicks6 = 0;
+    var numclicks7 = 0;
 
   	$(document).ready(function() {
   		$("#theimage1").click(function(e) {
@@ -21,6 +27,84 @@
 
         $("body").append(newdomelement);
   		})
+      $("#theimage2").click(function(e) {
+        numclicks2++;
+        $("#numberofpeople2").text(numclicks2);
+        $("#numberofpeoplefield2").val(numclicks2);
+
+        var newdomelement = $("<div class='marker'></div>");
+        newdomelement.css("left", (e.pageX-3) + "px");
+        newdomelement.css("top", (e.pageY-3) + "px");
+
+        newdomelement.click(removeElementEvent2);
+
+        $("body").append(newdomelement);
+      })
+      $("#theimage3").click(function(e) {
+          numclicks3++;
+          $("#numberofpeople3").text(numclicks3);
+          $("#numberofpeoplefield3").val(numclicks3);
+
+          var newdomelement = $("<div class='marker'></div>");
+          newdomelement.css("left", (e.pageX-3) + "px");
+          newdomelement.css("top", (e.pageY-3) + "px");
+
+          newdomelement.click(removeElementEvent3);
+
+          $("body").append(newdomelement);
+      })
+      $("#theimage4").click(function(e) {
+          numclicks4++;
+          $("#numberofpeople4").text(numclicks4);
+          $("#numberofpeoplefield4").val(numclicks4);
+
+          var newdomelement = $("<div class='marker'></div>");
+          newdomelement.css("left", (e.pageX-3) + "px");
+          newdomelement.css("top", (e.pageY-3) + "px");
+
+          newdomelement.click(removeElementEvent4);
+
+          $("body").append(newdomelement);
+      })
+      $("#theimage5").click(function(e) {
+        numclicks5++;
+        $("#numberofpeople5").text(numclicks5);
+        $("#numberofpeoplefield5").val(numclicks5);
+
+        var newdomelement = $("<div class='marker'></div>");
+        newdomelement.css("left", (e.pageX-3) + "px");
+        newdomelement.css("top", (e.pageY-3) + "px");
+
+        newdomelement.click(removeElementEvent5);
+
+        $("body").append(newdomelement);
+      })
+      $("#theimage6").click(function(e) {
+        numclicks6++;
+        $("#numberofpeople6").text(numclicks6);
+        $("#numberofpeoplefield6").val(numclicks6);
+
+        var newdomelement = $("<div class='marker'></div>");
+        newdomelement.css("left", (e.pageX-3) + "px");
+        newdomelement.css("top", (e.pageY-3) + "px");
+
+        newdomelement.click(removeElementEvent6);
+
+        $("body").append(newdomelement);
+      })
+      $("#theimage7").click(function(e) {
+        numclicks7++;
+        $("#numberofpeople7").text(numclicks7);
+        $("#numberofpeoplefield7").val(numclicks7);
+
+        var newdomelement = $("<div class='marker'></div>");
+        newdomelement.css("left", (e.pageX-3) + "px");
+        newdomelement.css("top", (e.pageY-3) + "px");
+
+        newdomelement.click(removeElementEvent7);
+
+        $("body").append(newdomelement);
+      })
   	})
 
     function removeElementEvent1(e) {
@@ -30,7 +114,49 @@
       $("#numberofpeople1").text(numclicks1);
       $("#numberofpeoplefield1").val(numclicks1); 
     }
-    
+    function removeElementEvent2(e) {
+      $(this).remove();
+
+      numclicks2--;
+      $("#numberofpeople2").text(numclicks1);
+      $("#numberofpeoplefield2").val(numclicks1); 
+    }
+    function removeElementEvent3(e) {
+      $(this).remove();
+
+      numclicks3--;
+      $("#numberofpeople3").text(numclicks1);
+      $("#numberofpeoplefield3").val(numclicks1); 
+    }
+    function removeElementEvent4(e) {
+      $(this).remove();
+
+      numclicks4--;
+      $("#numberofpeople4").text(numclicks1);
+      $("#numberofpeoplefield4").val(numclicks1); 
+    }
+    function removeElementEvent5(e) {
+      $(this).remove();
+
+      numclicks5--;
+      $("#numberofpeople5").text(numclicks1);
+      $("#numberofpeoplefield5").val(numclicks1); 
+    }
+    function removeElementEvent6(e) {
+      $(this).remove();
+
+      numclicks6--;
+      $("#numberofpeople6").text(numclicks1);
+      $("#numberofpeoplefield6").val(numclicks1); 
+    }
+    function removeElementEvent7(e) {
+      $(this).remove();
+
+      numclicks7--;
+      $("#numberofpeople7").text(numclicks1);
+      $("#numberofpeoplefield7").val(numclicks1); 
+    }
+
   </script>
   <style>
     .marker {
@@ -42,21 +168,59 @@
       left: 0px;
       top: 0px;
     }
+    p {
+      padding-bottom: 20px;
+    }
   </style>
 </head>
 <body>
 
 <h1>People Counter</h1>
 
-<img id="theimage1" src="https://lh4.googleusercontent.com/RrlsYOqwv_90Avm-U5D_qMf8aPKuORL291fD8Xlw3FArL-GZ9ijeMR65tZfEwqRF9OSHs5r0szGki8hX8ahCeB0cTcI0r0QUSZyPrtE18wn_3WMYgi3UlbRycRIFtO7SwrNBruA">
-
+<img id="theimage1" width="500px" src="https://lh3.googleusercontent.com/YQ4vhAkyih5ulg1YwqOB_35GBj5pF3isFxWoQh4bPrqnhAFl7iU9F8KKD7UUwxi2fdzdHhcqQVI0Xlr3ZuHSvYbUv94PnEvpnVCr5ZjArHpSzbNlBcuohjHKGDgsbo5hkFt2j-E">
 <p>
   You've selected <span id="numberofpeople1">0</span> people.
+</p>
+
+<img id="theimage2" width="500px" src="https://lh6.googleusercontent.com/7RK-zLgvsL90az-ap_f4L7JATDCBdPIiftFol9fzFppwqwVcoGW6u3JQKogo_eysx1QgK46I8s1SldW-cwTpeMqDr6C-bwzI_L5ltjJKJ_Dq9q63gHharAaxK8A0w7icR9TCo24">
+<p>
+  You've selected <span id="numberofpeople2">0</span> people.
+</p>
+
+<img id="theimage3" width="500px" src="https://lh6.googleusercontent.com/5cQQlH0WbbHYQHj6NUcflWEEplaxr4DNRQzh-3WqgfwIjrHBrbvGYP6tfmeBf5RvsKXCbISqX1yEJXexntr_RVZteVy5YhSaw2Y_diBs4L9WMpfvBi5uw2Ci7mFewDoHOzPg4nY">
+<p>
+  You've selected <span id="numberofpeople3">0</span> people.
+</p>
+
+<img id="theimage4" width="500px" src="https://lh4.googleusercontent.com/LUUZM2Q23mu2dUjDJ8__U9oFIVhSPazqjJTMVEI3yBXnZPct566lIHL3BFnpQ3LB_EhSXH2bCrhrgaTVP48032H1A8FudZy5525sD7wue1ZeOfKAMjw0wgVCyUcicNNRF9Jf_Uc">
+<p>
+  You've selected <span id="numberofpeople4">0</span> people.
+</p>
+
+<img id="theimage5" width="500px" src="https://lh6.googleusercontent.com/V5ZYEkPAjO-OuJD5Vbj7AyVWCNu36e1M3RKpppwgPPLahb4Grx6N9zk3DlksdIutJ-qYgKLEd7L7oBf59qwXnmgpXZlYF4U4tUpzyb56QcCrICfrsEmABQtnyx5QRibxV0KXuKc">
+<p>
+  You've selected <span id="numberofpeople5">0</span> people.
+</p>
+
+<img id="theimage6" width="500px" src="https://lh6.googleusercontent.com/z7tcu9Wiczm8t2d3XfxdcnUS-WQ5s7qc3vqE1KGAdMShQxMcwC2FVAadfXdL0-0NwQl98yN24Zt2jFNexLcnwhz8o92iPgG9PGOmo1un29U-sL_Z_nhDNEGqY2gkwgFqC8OygSA">
+<p>
+  You've selected <span id="numberofpeople6">0</span> people.
+</p>
+
+<img id="theimage7" width="500px" src="https://peopledotcom.files.wordpress.com/2017/06/marilyn-monroe-5.jpg?w=669">
+<p>
+  You've selected <span id="numberofpeople7">0</span> people.
 </p>
 
 <form id="mturk_form">
 <p>
   <input id="numberofpeoplefield1" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield2" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield3" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield4" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield5" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield6" type="hidden" name="numberofpeople">
+  <input id="numberofpeoplefield7" type="hidden" name="numberofpeople">
   <input type="submit" name="Submit">
 </p>
 </body>
