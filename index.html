@@ -1,60 +1,36 @@
 <!doctype html>
 <html>
 <head>
-	<title>My Amazing HIT</title>
+	<title>People Counting HIT</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="mturk.js"></script>
   <script>
-  	var numclicks = 0;
-  	var keydowns = 0;
-
-    var addedelements = [];
+  	var numclicks1 = 0;
 
   	$(document).ready(function() {
-  		$("#theimage").click(function(e) {
-        numclicks++;
-        $("#numberofpeople").text(numclicks);
-        $("#numberofpeoplefield").val(numclicks);
+  		$("#theimage1").click(function(e) {
+        numclicks1++;
+        $("#numberofpeople1").text(numclicks1);
+        $("#numberofpeoplefield1").val(numclicks1);
 
         var newdomelement = $("<div class='marker'></div>");
         newdomelement.css("left", (e.pageX-3) + "px");
         newdomelement.css("top", (e.pageY-3) + "px");
 
-        var currhistory = $("#history").val();
-        currhistory += "|" + e.pageX + "," + e.pageY + "|";
-        $("#history").val(currhistory);
-
-        newdomelement.click(removeElementEvent);
+        newdomelement.click(removeElementEvent1);
 
         $("body").append(newdomelement);
-
-        // add to history
-        addedelements.push(newdomelement);
-  		})
-  		$(document).keydown(function(e) {
-  			keydowns++;
-  			$("#numkeydowns").val(keydowns);
-
-        console.log(e);
-
-        if(e.key=="z" && e.ctrlKey) {
-          var elem2remove = addedelements.pop();
-          removeElement(elem2remove);
-        }
   		})
   	})
 
-    function removeElement(elem) {
-      $(elem).remove();
+    function removeElementEvent1(e) {
+      $(this).remove();
 
-      numclicks--;
-      $("#numberofpeople").text(numclicks);
-      $("#numberofpeoplefield").val(numclicks);       
+      numclicks1--;
+      $("#numberofpeople1").text(numclicks1);
+      $("#numberofpeoplefield1").val(numclicks1); 
     }
-
-    function removeElementEvent(e) {
-      removeElement(this);
-    }
+    
   </script>
   <style>
     .marker {
@@ -72,19 +48,16 @@
 
 <h1>People Counter</h1>
 
-<img id="theimage" src="https://lh4.googleusercontent.com/RrlsYOqwv_90Avm-U5D_qMf8aPKuORL291fD8Xlw3FArL-GZ9ijeMR65tZfEwqRF9OSHs5r0szGki8hX8ahCeB0cTcI0r0QUSZyPrtE18wn_3WMYgi3UlbRycRIFtO7SwrNBruA">
+<img id="theimage1" src="https://lh4.googleusercontent.com/RrlsYOqwv_90Avm-U5D_qMf8aPKuORL291fD8Xlw3FArL-GZ9ijeMR65tZfEwqRF9OSHs5r0szGki8hX8ahCeB0cTcI0r0QUSZyPrtE18wn_3WMYgi3UlbRycRIFtO7SwrNBruA">
 
 <p>
-You've selected <span id="numberofpeople">0</span> people.
+  You've selected <span id="numberofpeople1">0</span> people.
 </p>
 
 <form id="mturk_form">
 <p>
-  <input id="numclickfield" type="hidden" name="numclicks">
-  <input id="numkeydowns" type="hidden" name="keydowns">
-  <input id="numberofpeoplefield" type="hidden" name="numberofpeople">
-  <input id="history" type="hidden" name="history">
-  <input type="submit" name="Submit Joke">
+  <input id="numberofpeoplefield1" type="hidden" name="numberofpeople">
+  <input type="submit" name="Submit">
 </p>
 </body>
 </html>
